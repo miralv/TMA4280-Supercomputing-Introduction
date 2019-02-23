@@ -21,5 +21,3 @@ double* verification_RZ(){
     return err;
 }
 
-
-
