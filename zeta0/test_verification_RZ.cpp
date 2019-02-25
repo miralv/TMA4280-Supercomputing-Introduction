@@ -15,7 +15,7 @@ double* verification_RZ(){
     double err[24];
     for (int k = 1; k<=24; k++){
         n = pow(2,k);
-        err[k-1] = abs(atan(1)*4 - RiemannZeta(k)); 
+        err[k-1] = abs(atan(1)*4 - find_pi_rz(k)); 
     }
 
     return err;

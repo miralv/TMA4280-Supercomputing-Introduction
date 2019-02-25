@@ -8,7 +8,7 @@ void test_findPi_RZ();
 //compare the value for n = 3
 
 void test_findPi_RZ(){
-    double pi_0 = RiemannZeta(3);
+    double pi_0 = find_pi_rz(3);
     //compute the theoretical result and compare
 
     cout << "Pi computed with n = 3, using the Riemann Zeta Formula: " << pi_0 <<endl;
