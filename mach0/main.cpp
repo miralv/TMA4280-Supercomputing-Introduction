@@ -36,9 +36,7 @@ void utest(){
 
     double expected_pi = 3.14162102932503461972;
     double computed_pi = find_pi_machin(3);
-
     std::string message = (expected_pi == computed_pi) ? "OK" : "FAIL";
-    
     std::cout<<test_name << message <<std::endl;
     
     }//
@@ -96,9 +94,6 @@ int main(int argc, char** argv){
         vtest();
     }
 
-
     return 0;
-
-
 
 }
