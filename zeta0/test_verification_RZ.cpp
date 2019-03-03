@@ -9,7 +9,6 @@ double* verification_RZ();
 // vil returnere en array med tall, hvordan gjøres det i c++? ved å returnere en peker? 
 // kan evt sjekke ut noe eksempelkode på hjemmesiden
 
-
 double* verification_RZ(){
     int n;
     double err[24];

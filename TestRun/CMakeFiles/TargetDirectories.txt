@@ -1,0 +1,5 @@
+/home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles/edit_cache.dir
+/home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles/mach2.dir
+/home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles/mach0.dir
+/home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles/rebuild_cache.dir
+/home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles/mach1.dir

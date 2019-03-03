@@ -1,6 +1,9 @@
+#include <mpi>
 #include <iostream>
 #include <cmath>
 using namespace std;
+
+
 double* RiemannZeta_vec(int n);
 
 // Constraint: All elements should be put in a vector before being summed
