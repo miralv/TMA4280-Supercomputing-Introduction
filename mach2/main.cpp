@@ -4,9 +4,13 @@
 
 double machin(int i, double x) {
     // Calculate v_i by use of the machin formula
-    int num = 2 * i - 1;
-    return pow(-1,i-1) * pow(x,num)/num;
+    double num = double(2 * i - 1);
+    double a =  pow(-1.0,double(i-1));
+    double frac = pow(x,num)/num;
+    double v_i = frac * a;
+    return v_i;
 }
+
 
 int main(int argc, char** argv){
 
@@ -56,7 +60,6 @@ int main(int argc, char** argv){
     // vil først sjekke at ting stemmer uten mpi
 
 
-    //per nå er det kun én prosessor som får en sum > 0. Hvorfor???????????
     double my_pi = 4 * (4 * sum_first - sum_second);
     //double my_pi = 3.14;
     // tror at vi nå har sum nproc*sum i alle => må dele på nproc
