@@ -65,6 +65,43 @@ CMAKE_SOURCE_DIR = /home/miralv/Documents/TMA4280-Supercomputing-Introduction
 CMAKE_BINARY_DIR = /home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun
 
 #=============================================================================
+# Target rules for target CMakeFiles/zeta0.dir
+
+# All Build rule for target.
+CMakeFiles/zeta0.dir/all:
+	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/depend
+	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles --progress-num=7,8 "Built target zeta0"
+.PHONY : CMakeFiles/zeta0.dir/all
+
+# Include target in all.
+all: CMakeFiles/zeta0.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/zeta0.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/zeta0.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles 0
+.PHONY : CMakeFiles/zeta0.dir/rule
+
+# Convenience name for target.
+zeta0: CMakeFiles/zeta0.dir/rule
+
+.PHONY : zeta0
+
+# clean rule for target.
+CMakeFiles/zeta0.dir/clean:
+	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/clean
+.PHONY : CMakeFiles/zeta0.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/zeta0.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/mach2.dir
 
 # All Build rule for target.

@@ -3,42 +3,35 @@
 #include <cmath>
 #include <string>
 
-double machin(int i, double x) {
-    // Calculate v_i by use of the machin formula
-    double num = double(2 * i - 1);
-    double a =  pow(-1.0,double(i-1));
-    double frac = pow(x,num)/num;
-    double v_i = frac * a;
+double riemannzeta(int i){
+    // Calculate v_i by use of the riemann zeta formula
+    double v_i = 1/(pow(i,2));
     return v_i;
 }
 
-double sum_v_machin(int n, double x){
-    // find sum of vector v
+double sum_v_rz(int n){
     double sum = 0.0;
-    for (int i = 0; i < n; i ++){
-        sum += machin(i+1, x);
+    for (int i = 0; i<n; i++){
+        sum += riemannzeta(i+1);
     }
     return sum;
 }
 
-double find_pi_machin(int n){
-    // Compute pi by use of the machin formula
-    double x1 = 1.0/5;
-    double x2 = 1.0/239;
-    double sum1 = sum_v_machin(n,x1);
-    double sum2 = sum_v_machin(n,x2);
-    double pi = 4 * (4*sum1 - sum2);
+double find_pi_rz(int n){
+    // Compute pi by use of the riemann zeta formula
+    double sum_v = sum_v_rz(n);
+    double pi = sqrt(6*sum_v);
     return pi;
 }
 
-void utest(){
-    std::string test_name = "mach0: utest for n =3\n";
 
-    double expected_pi = 3.14162102932503461972;
-    double computed_pi = find_pi_machin(3);
+void utest(){
+    std::string test_name = "zeta0: utest for n =3\n";
+
+    double expected_pi = 2.85773803324704145368;
+    double computed_pi = find_pi_rz(3);
     std::string message = (expected_pi == computed_pi) ? "OK" : "FAIL";
     std::cout<<test_name << message <<std::endl;
-    
     }//
 
 void writeVerificationToFile(std::string filename, double* error_vec){
@@ -62,9 +55,9 @@ void vtest(){
     double pi_true = atan(1)*4;
     for (int k = 1; k<=24; k++){
         n = pow(2,k);
-        err[k-1] = fabs(pi_true - find_pi_machin(k)); 
+        err[k-1] = fabs(pi_true - find_pi_rz(k)); 
     }
-    writeVerificationToFile("mach0_vtest.txt", err);
+    writeVerificationToFile("zeta0_vtest.txt", err);
 } 
 
 void printOptions(){
@@ -83,13 +76,11 @@ int main(int argc, char** argv){
 
     int n = atoi(argv[1]);
     std::cout<<" Computed pi for n= " << n <<": "<<std::endl;
-    double pi = find_pi_machin(n);
+    double pi = find_pi_rz(n);
     std::cout<< pi<<std::endl;
-
     if (argc>2 && atoi(argv[2])==1){
         utest();
     }
-
     if (argc>3 && atoi(argv[3])==1){
         vtest();
     }

@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named zeta0
+
+# Build rule for target.
+zeta0: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zeta0
+.PHONY : zeta0
+
+# fast build rule for target.
+zeta0/fast:
+	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/build
+.PHONY : zeta0/fast
+
+#=============================================================================
 # Target rules for targets named mach2
 
 # Build rule for target.
@@ -230,6 +243,33 @@ mach2/main.cpp.s:
 	$(MAKE) -f CMakeFiles/mach2.dir/build.make CMakeFiles/mach2.dir/mach2/main.cpp.s
 .PHONY : mach2/main.cpp.s
 
+zeta0/main.o: zeta0/main.cpp.o
+
+.PHONY : zeta0/main.o
+
+# target to build an object file
+zeta0/main.cpp.o:
+	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/zeta0/main.cpp.o
+.PHONY : zeta0/main.cpp.o
+
+zeta0/main.i: zeta0/main.cpp.i
+
+.PHONY : zeta0/main.i
+
+# target to preprocess a source file
+zeta0/main.cpp.i:
+	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/zeta0/main.cpp.i
+.PHONY : zeta0/main.cpp.i
+
+zeta0/main.s: zeta0/main.cpp.s
+
+.PHONY : zeta0/main.s
+
+# target to generate assembly for a file
+zeta0/main.cpp.s:
+	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/zeta0/main.cpp.s
+.PHONY : zeta0/main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -237,6 +277,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... zeta0"
 	@echo "... mach2"
 	@echo "... mach0"
 	@echo "... rebuild_cache"
@@ -250,6 +291,9 @@ help:
 	@echo "... mach2/main.o"
 	@echo "... mach2/main.i"
 	@echo "... mach2/main.s"
+	@echo "... zeta0/main.o"
+	@echo "... zeta0/main.i"
+	@echo "... zeta0/main.s"
 .PHONY : help
 
 

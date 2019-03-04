@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/miralv/Documents/TMA4280-Supercomputing-Introduction/zeta0/main.cpp
+iostream
+-
+fstream
+-
+cmath
+-
+string
+-
+

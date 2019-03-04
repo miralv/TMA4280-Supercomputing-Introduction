@@ -6,7 +6,7 @@ find_package(MPI REQUIRED)
 
 
 
-foreach (prog mach0 mach1 mach2)
+foreach (prog mach0 mach1 mach2 zeta0)
     add_executable(${prog} ${prog}/main.cpp)
     target_include_directories(${prog} PRIVATE ${MPI_CXX_INCLUDE_DIRS})
     target_compile_options(${prog} PRIVATE ${MPI_CXX_COMPILE_OPTIONS})
