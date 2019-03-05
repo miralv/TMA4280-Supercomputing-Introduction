@@ -31,8 +31,6 @@ int main(int argc, char** argv){
     numbers_first = new double[n];
     double* numbers_second;
     numbers_second = new double[n];
-    double sum_first = 0;
-    double sum_second = 0;
     double sum_first_total = 0;
     double sum_second_total = 0;
 
@@ -53,6 +51,10 @@ int main(int argc, char** argv){
     MPI_Bcast(&numbers_first[0],n,MPI_DOUBLE, 0,MPI_COMM_WORLD);
     MPI_Bcast(&numbers_second[0],n,MPI_DOUBLE, 0,MPI_COMM_WORLD);
 
+
+    double sum_first = 0;
+    double sum_second = 0;
+
     //let all processes work on the received data
     for(int i = 0; i < n; i++){
         sum_first += numbers_first[i];
@@ -63,9 +65,7 @@ int main(int argc, char** argv){
     MPI_Reduce(&sum_second, &sum_second_total, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
     if(rank==0){
-        //per nå er det kun én prosessor som får en sum > 0. Hvorfor???????????
         double my_pi = 4 * (4 * sum_first - sum_second);
-        //double my_pi = 3.14;
         // tror at vi nå har sum nproc*sum i alle => må dele på nproc
         std::cout<< "Process "<<rank<<" computed pi = "<< my_pi <<std::endl;
     }    

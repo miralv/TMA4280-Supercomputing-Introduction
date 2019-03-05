@@ -1,0 +1,1 @@
+/usr/bin/c++   -fopenmp    -rdynamic CMakeFiles/mach3.dir/mach3/main.cpp.o  -o mach3 

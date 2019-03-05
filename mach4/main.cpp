@@ -1,6 +1,7 @@
 #include <mpi.h>
 #include <iostream>
 #include <cmath>
+//Final program, combining MPI and OpenMP
 
 double machin(int i, double x) {
     // Calculate v_i by use of the machin formula
@@ -11,9 +12,6 @@ double machin(int i, double x) {
     return v_i;
 }
 
-// Add a program that distributes the elements to all the processes
-// Each process receives only parts of the data
-// Then each process computes its partial sum, before the partial sums are added
 
 int main(int argc, char** argv){
     if(argc<2) {
@@ -86,7 +84,8 @@ int main(int argc, char** argv){
         MPI_Recv(&numbers_second[ind],rem,MPI_DOUBLE,size-1,2,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
     } */   
 
-    //let all processes work on the received data
+    #pragma omp parallel for num_threads(n_threads) reduction(+:sum_first_sub,sum_second_sub)
+
     for(int i = 0; i < n_each; i++){
         sum_first_sub += numbers_first_sub[i];
         sum_second_sub += numbers_second_sub[i];

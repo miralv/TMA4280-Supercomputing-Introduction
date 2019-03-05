@@ -10,7 +10,7 @@ double* RiemannZeta_vec(int n);
 double* RiemannZeta_vec(int n) {
     double vec[n];
     for( int i = 0; i < n; i ++){
-        vec[i] =  1/pow(i+1,2);
+        vec[i] =  1.0/pow(i+1,2);
     }
 
     // now all the n elements v_i are stored in vec.

@@ -10,3 +10,8 @@ arg3: 1 if vtest wanted (optional)
 
 mach1:
 mpirun -np <nprocesses> ./mach1
+
+
+mach3: 
+hvis man kjører fra mappen mach3, så virker dette:
+g++ main.cpp .-lgomp -o test.exe 

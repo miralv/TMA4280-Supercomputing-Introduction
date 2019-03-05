@@ -65,76 +65,39 @@ CMAKE_SOURCE_DIR = /home/miralv/Documents/TMA4280-Supercomputing-Introduction
 CMAKE_BINARY_DIR = /home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun
 
 #=============================================================================
-# Target rules for target CMakeFiles/zeta0.dir
+# Target rules for target CMakeFiles/mach1.dir
 
 # All Build rule for target.
-CMakeFiles/zeta0.dir/all:
-	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/depend
-	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles --progress-num=7,8 "Built target zeta0"
-.PHONY : CMakeFiles/zeta0.dir/all
+CMakeFiles/mach1.dir/all:
+	$(MAKE) -f CMakeFiles/mach1.dir/build.make CMakeFiles/mach1.dir/depend
+	$(MAKE) -f CMakeFiles/mach1.dir/build.make CMakeFiles/mach1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles --progress-num=3,4 "Built target mach1"
+.PHONY : CMakeFiles/mach1.dir/all
 
 # Include target in all.
-all: CMakeFiles/zeta0.dir/all
+all: CMakeFiles/mach1.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/zeta0.dir/rule: cmake_check_build_system
+CMakeFiles/mach1.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/zeta0.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mach1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles 0
-.PHONY : CMakeFiles/zeta0.dir/rule
+.PHONY : CMakeFiles/mach1.dir/rule
 
 # Convenience name for target.
-zeta0: CMakeFiles/zeta0.dir/rule
+mach1: CMakeFiles/mach1.dir/rule
 
-.PHONY : zeta0
-
-# clean rule for target.
-CMakeFiles/zeta0.dir/clean:
-	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/clean
-.PHONY : CMakeFiles/zeta0.dir/clean
+.PHONY : mach1
 
 # clean rule for target.
-clean: CMakeFiles/zeta0.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/mach2.dir
-
-# All Build rule for target.
-CMakeFiles/mach2.dir/all:
-	$(MAKE) -f CMakeFiles/mach2.dir/build.make CMakeFiles/mach2.dir/depend
-	$(MAKE) -f CMakeFiles/mach2.dir/build.make CMakeFiles/mach2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles --progress-num=5,6 "Built target mach2"
-.PHONY : CMakeFiles/mach2.dir/all
-
-# Include target in all.
-all: CMakeFiles/mach2.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/mach2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mach2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles 0
-.PHONY : CMakeFiles/mach2.dir/rule
-
-# Convenience name for target.
-mach2: CMakeFiles/mach2.dir/rule
-
-.PHONY : mach2
+CMakeFiles/mach1.dir/clean:
+	$(MAKE) -f CMakeFiles/mach1.dir/build.make CMakeFiles/mach1.dir/clean
+.PHONY : CMakeFiles/mach1.dir/clean
 
 # clean rule for target.
-CMakeFiles/mach2.dir/clean:
-	$(MAKE) -f CMakeFiles/mach2.dir/build.make CMakeFiles/mach2.dir/clean
-.PHONY : CMakeFiles/mach2.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/mach2.dir/clean
+clean: CMakeFiles/mach1.dir/clean
 
 .PHONY : clean
 
@@ -176,39 +139,113 @@ clean: CMakeFiles/mach0.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/mach1.dir
+# Target rules for target CMakeFiles/mach3.dir
 
 # All Build rule for target.
-CMakeFiles/mach1.dir/all:
-	$(MAKE) -f CMakeFiles/mach1.dir/build.make CMakeFiles/mach1.dir/depend
-	$(MAKE) -f CMakeFiles/mach1.dir/build.make CMakeFiles/mach1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles --progress-num=3,4 "Built target mach1"
-.PHONY : CMakeFiles/mach1.dir/all
+CMakeFiles/mach3.dir/all:
+	$(MAKE) -f CMakeFiles/mach3.dir/build.make CMakeFiles/mach3.dir/depend
+	$(MAKE) -f CMakeFiles/mach3.dir/build.make CMakeFiles/mach3.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles --progress-num=7,8 "Built target mach3"
+.PHONY : CMakeFiles/mach3.dir/all
 
 # Include target in all.
-all: CMakeFiles/mach1.dir/all
+all: CMakeFiles/mach3.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/mach1.dir/rule: cmake_check_build_system
+CMakeFiles/mach3.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mach1.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mach3.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles 0
-.PHONY : CMakeFiles/mach1.dir/rule
+.PHONY : CMakeFiles/mach3.dir/rule
 
 # Convenience name for target.
-mach1: CMakeFiles/mach1.dir/rule
+mach3: CMakeFiles/mach3.dir/rule
 
-.PHONY : mach1
-
-# clean rule for target.
-CMakeFiles/mach1.dir/clean:
-	$(MAKE) -f CMakeFiles/mach1.dir/build.make CMakeFiles/mach1.dir/clean
-.PHONY : CMakeFiles/mach1.dir/clean
+.PHONY : mach3
 
 # clean rule for target.
-clean: CMakeFiles/mach1.dir/clean
+CMakeFiles/mach3.dir/clean:
+	$(MAKE) -f CMakeFiles/mach3.dir/build.make CMakeFiles/mach3.dir/clean
+.PHONY : CMakeFiles/mach3.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/mach3.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/mach2.dir
+
+# All Build rule for target.
+CMakeFiles/mach2.dir/all:
+	$(MAKE) -f CMakeFiles/mach2.dir/build.make CMakeFiles/mach2.dir/depend
+	$(MAKE) -f CMakeFiles/mach2.dir/build.make CMakeFiles/mach2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles --progress-num=5,6 "Built target mach2"
+.PHONY : CMakeFiles/mach2.dir/all
+
+# Include target in all.
+all: CMakeFiles/mach2.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/mach2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mach2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles 0
+.PHONY : CMakeFiles/mach2.dir/rule
+
+# Convenience name for target.
+mach2: CMakeFiles/mach2.dir/rule
+
+.PHONY : mach2
+
+# clean rule for target.
+CMakeFiles/mach2.dir/clean:
+	$(MAKE) -f CMakeFiles/mach2.dir/build.make CMakeFiles/mach2.dir/clean
+.PHONY : CMakeFiles/mach2.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/mach2.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/zeta0.dir
+
+# All Build rule for target.
+CMakeFiles/zeta0.dir/all:
+	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/depend
+	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles --progress-num=9,10 "Built target zeta0"
+.PHONY : CMakeFiles/zeta0.dir/all
+
+# Include target in all.
+all: CMakeFiles/zeta0.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/zeta0.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/zeta0.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/miralv/Documents/TMA4280-Supercomputing-Introduction/TestRun/CMakeFiles 0
+.PHONY : CMakeFiles/zeta0.dir/rule
+
+# Convenience name for target.
+zeta0: CMakeFiles/zeta0.dir/rule
+
+.PHONY : zeta0
+
+# clean rule for target.
+CMakeFiles/zeta0.dir/clean:
+	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/clean
+.PHONY : CMakeFiles/zeta0.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/zeta0.dir/clean
 
 .PHONY : clean
 

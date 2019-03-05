@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/miralv/Documents/TMA4280-Supercomputing-Introduction/Te
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,30 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named zeta0
+# Target rules for targets named mach1
 
 # Build rule for target.
-zeta0: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 zeta0
-.PHONY : zeta0
+mach1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mach1
+.PHONY : mach1
 
 # fast build rule for target.
-zeta0/fast:
-	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/build
-.PHONY : zeta0/fast
-
-#=============================================================================
-# Target rules for targets named mach2
-
-# Build rule for target.
-mach2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mach2
-.PHONY : mach2
-
-# fast build rule for target.
-mach2/fast:
-	$(MAKE) -f CMakeFiles/mach2.dir/build.make CMakeFiles/mach2.dir/build
-.PHONY : mach2/fast
+mach1/fast:
+	$(MAKE) -f CMakeFiles/mach1.dir/build.make CMakeFiles/mach1.dir/build
+.PHONY : mach1/fast
 
 #=============================================================================
 # Target rules for targets named mach0
@@ -150,17 +137,43 @@ mach0/fast:
 .PHONY : mach0/fast
 
 #=============================================================================
-# Target rules for targets named mach1
+# Target rules for targets named mach3
 
 # Build rule for target.
-mach1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mach1
-.PHONY : mach1
+mach3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mach3
+.PHONY : mach3
 
 # fast build rule for target.
-mach1/fast:
-	$(MAKE) -f CMakeFiles/mach1.dir/build.make CMakeFiles/mach1.dir/build
-.PHONY : mach1/fast
+mach3/fast:
+	$(MAKE) -f CMakeFiles/mach3.dir/build.make CMakeFiles/mach3.dir/build
+.PHONY : mach3/fast
+
+#=============================================================================
+# Target rules for targets named mach2
+
+# Build rule for target.
+mach2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mach2
+.PHONY : mach2
+
+# fast build rule for target.
+mach2/fast:
+	$(MAKE) -f CMakeFiles/mach2.dir/build.make CMakeFiles/mach2.dir/build
+.PHONY : mach2/fast
+
+#=============================================================================
+# Target rules for targets named zeta0
+
+# Build rule for target.
+zeta0: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zeta0
+.PHONY : zeta0
+
+# fast build rule for target.
+zeta0/fast:
+	$(MAKE) -f CMakeFiles/zeta0.dir/build.make CMakeFiles/zeta0.dir/build
+.PHONY : zeta0/fast
 
 mach0/main.o: mach0/main.cpp.o
 
@@ -243,6 +256,33 @@ mach2/main.cpp.s:
 	$(MAKE) -f CMakeFiles/mach2.dir/build.make CMakeFiles/mach2.dir/mach2/main.cpp.s
 .PHONY : mach2/main.cpp.s
 
+mach3/main.o: mach3/main.cpp.o
+
+.PHONY : mach3/main.o
+
+# target to build an object file
+mach3/main.cpp.o:
+	$(MAKE) -f CMakeFiles/mach3.dir/build.make CMakeFiles/mach3.dir/mach3/main.cpp.o
+.PHONY : mach3/main.cpp.o
+
+mach3/main.i: mach3/main.cpp.i
+
+.PHONY : mach3/main.i
+
+# target to preprocess a source file
+mach3/main.cpp.i:
+	$(MAKE) -f CMakeFiles/mach3.dir/build.make CMakeFiles/mach3.dir/mach3/main.cpp.i
+.PHONY : mach3/main.cpp.i
+
+mach3/main.s: mach3/main.cpp.s
+
+.PHONY : mach3/main.s
+
+# target to generate assembly for a file
+mach3/main.cpp.s:
+	$(MAKE) -f CMakeFiles/mach3.dir/build.make CMakeFiles/mach3.dir/mach3/main.cpp.s
+.PHONY : mach3/main.cpp.s
+
 zeta0/main.o: zeta0/main.cpp.o
 
 .PHONY : zeta0/main.o
@@ -276,12 +316,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... zeta0"
-	@echo "... mach2"
-	@echo "... mach0"
 	@echo "... rebuild_cache"
 	@echo "... mach1"
+	@echo "... mach0"
+	@echo "... mach3"
+	@echo "... mach2"
+	@echo "... zeta0"
+	@echo "... edit_cache"
 	@echo "... mach0/main.o"
 	@echo "... mach0/main.i"
 	@echo "... mach0/main.s"
@@ -291,6 +332,9 @@ help:
 	@echo "... mach2/main.o"
 	@echo "... mach2/main.i"
 	@echo "... mach2/main.s"
+	@echo "... mach3/main.o"
+	@echo "... mach3/main.i"
+	@echo "... mach3/main.s"
 	@echo "... zeta0/main.o"
 	@echo "... zeta0/main.i"
 	@echo "... zeta0/main.s"
