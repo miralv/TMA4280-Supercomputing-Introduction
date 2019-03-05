@@ -1,0 +1,1 @@
+/usr/bin/c++   -fopenmp    -rdynamic -pthread CMakeFiles/zeta4.dir/zeta4/main.cpp.o  -o zeta4 -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 

@@ -41,13 +41,12 @@ int main(int argc, char** argv){
 
     if (rank == 0){
         for (int i = 0; i<n; i++){
-            // bare tester
             numbers_first[i] = machin(i+1,first);
             numbers_second[i] = machin(i+1,second);
         }
     }
 
-    //send all elements to all processes
+    // Send all elements to all processes
     MPI_Bcast(&numbers_first[0],n,MPI_DOUBLE, 0,MPI_COMM_WORLD);
     MPI_Bcast(&numbers_second[0],n,MPI_DOUBLE, 0,MPI_COMM_WORLD);
 
@@ -55,7 +54,7 @@ int main(int argc, char** argv){
     double sum_first = 0;
     double sum_second = 0;
 
-    //let all processes work on the received data
+    // Let all processes work on the received data
     for(int i = 0; i < n; i++){
         sum_first += numbers_first[i];
         sum_second += numbers_second[i];
@@ -65,8 +64,8 @@ int main(int argc, char** argv){
     MPI_Reduce(&sum_second, &sum_second_total, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
     if(rank==0){
-        double my_pi = 4 * (4 * sum_first - sum_second);
-        // tror at vi nå har sum nproc*sum i alle => må dele på nproc
+        double my_pi = 4.0 * (4 * sum_first_total - sum_second_total)/size;
+        // Need to divide on size, since we have summed all elements in all processes
         std::cout<< "Process "<<rank<<" computed pi = "<< my_pi <<std::endl;
     }    
 

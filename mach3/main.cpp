@@ -13,7 +13,7 @@ double machin(int i, double x) {
     return v_i;
 }
 
-
+// OpenMP implementation
 int main(int argc, char** argv){
     if(argc<3) {
         std::cout<<"Requires arguemnt: n and nthreads"<<std::endl;

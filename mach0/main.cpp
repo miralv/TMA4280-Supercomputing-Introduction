@@ -39,7 +39,7 @@ void utest(){
     std::string message = (expected_pi == computed_pi) ? "OK" : "FAIL";
     std::cout<<test_name << message <<std::endl;
     
-    }//
+    }
 
 void writeVerificationToFile(std::string filename, double* error_vec){
     std::ofstream myfile;

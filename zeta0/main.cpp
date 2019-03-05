@@ -5,7 +5,7 @@
 
 double riemannzeta(int i){
     // Calculate v_i by use of the riemann zeta formula
-    double v_i = 1/(pow(i,2));
+    double v_i = 1.0/(pow(i,2));
     return v_i;
 }
 
@@ -27,12 +27,11 @@ double find_pi_rz(int n){
 
 void utest(){
     std::string test_name = "zeta0: utest for n =3\n";
-
     double expected_pi = 2.85773803324704145368;
     double computed_pi = find_pi_rz(3);
     std::string message = (expected_pi == computed_pi) ? "OK" : "FAIL";
     std::cout<<test_name << message <<std::endl;
-    }//
+    }
 
 void writeVerificationToFile(std::string filename, double* error_vec){
     std::ofstream myfile;

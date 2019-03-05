@@ -1,4 +1,5 @@
 #include <mpi.h>
+#include <omp.h>
 #include <iostream>
 #include <cmath>
 //Final program, combining MPI and OpenMP
@@ -15,19 +16,17 @@ double machin(int i, double x) {
 
 int main(int argc, char** argv){
     if(argc<2) {
-        std::cout<<"Requires arguemnt: n"<<std::endl;
-        std::cout<<"Choose n and nproc s.t. n%nprox = 0\n n must be a power of 2\n "<<std::endl;
+        std::cout<<"Requires arguemnts: n, nproc and nthreads."<<std::endl;
+        std::cout<<"Choose n and nproc and nthreads s.t. n%nprox = 0\n n must be a power of 2\n "<<std::endl;
         return 1;
     }
     const double PI = 4*atan(1.0);
+    int n = atoi(argv[1]);
+    int n_threads = atoi(argv[2]);
 
 
     // Size and rank
     int size,rank;
-
-    // Number of elements in the series
-    int n = atoi(argv[1]);
-    double time_start;
 
     double first = 1.0/5;
     double second = 1.0/239;        
@@ -46,9 +45,8 @@ int main(int argc, char** argv){
         return 1;
     }
 
-    //Virker som at det betyr mye på hvilken side av mpi_init dette står
-    //for local storage in each process
-    int n_each = n/size; // rounded down
+    double time_start;
+    int n_each = n/size; 
     int rem = n%size;
     double* numbers_first_sub = new double[n_each + rem];
     double* numbers_second_sub = new double[n_each + rem];
@@ -57,56 +55,31 @@ int main(int argc, char** argv){
 
 
     if (rank == 0){
+        time_start = MPI_Wtime();
         for (int i = 0; i<n; i++){
-            // bare tester
             numbers_first[i] = machin(i+1,first);
             numbers_second[i] = machin(i+1,second);
         }
     }
 
-    //spread the elements over the processes
+    // Spread the elements over the processes
     MPI_Scatter(&numbers_first[0], n_each, MPI_DOUBLE, &numbers_first_sub[0], n_each, MPI_DOUBLE, 0,MPI_COMM_WORLD);
     MPI_Scatter(&numbers_second[0], n_each, MPI_DOUBLE, &numbers_second_sub[0], n_each, MPI_DOUBLE, 0,MPI_COMM_WORLD);
-    
-    //Hva kan gjøres med de siste elementene?
-    
-    
-    /*
-    // The last rem elements are not sent anywhere now.
-    // let us send them to the last process
-    int ind;
-    if (rem!=0 && rank == 0){
-        ind = n_each*size;
-        MPI_Send(&numbers_first[ind],rem,MPI_DOUBLE,size-1,1,MPI_COMM_WORLD);
-        MPI_Send(&numbers_second[ind],rem,MPI_DOUBLE,size-1,2,MPI_COMM_WORLD);
-    } else if(rem!=0 && rank == size-1){
-        MPI_Recv(&numbers_first[ind],rem,MPI_DOUBLE,size-1,1,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
-        MPI_Recv(&numbers_second[ind],rem,MPI_DOUBLE,size-1,2,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
-    } */   
 
     #pragma omp parallel for num_threads(n_threads) reduction(+:sum_first_sub,sum_second_sub)
-
-    for(int i = 0; i < n_each; i++){
-        sum_first_sub += numbers_first_sub[i];
-        sum_second_sub += numbers_second_sub[i];
-    }
-    /*
-    if (rem!=0 && rank == size-1){
-        for(int i = ind; i <rem; i++){
-            sum_first_sub += numbers_first[i];
-            sum_second_sub += numbers_second[i];
+        for(int i = 0; i < n_each; i++){
+            sum_first_sub += numbers_first_sub[i];
+            sum_second_sub += numbers_second_sub[i];
         }
-    }*/
-
 
     MPI_Reduce(&sum_first_sub, &sum_first_total, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
     MPI_Reduce(&sum_second_sub, &sum_second_total, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
     if(rank==0){
-        double my_pi = 4 * (4 * sum_first_total - sum_second_total);
-        double error = fabs(my_pi-PI);
+        double pi = 4 * (4 * sum_first_total - sum_second_total);
+        double error = fabs(pi-PI);
         double duration = MPI_Wtime() - time_start;
-        printf("pi=%e\nerror=%e\nduration=%e\n", my_pi,error,duration);
+        printf("pi=%e\nerror=%e\nduration=%e\n", pi,error,duration);
     }    
 
     delete[] numbers_first;
