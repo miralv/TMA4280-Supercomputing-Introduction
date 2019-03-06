@@ -15,3 +15,7 @@ mpirun -np <nprocesses> ./mach1
 mach3: 
 hvis man kjører fra mappen mach3, så virker dette:
 g++ main.cpp .-lgomp -o test.exe 
+
+eller: export OMP_NUM_THREADS=8; ./myprogram
+
+

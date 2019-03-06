@@ -37,7 +37,7 @@ void writeVerificationToFile(std::string filename, double* error_vec){
     std::ofstream myfile;
     myfile.open(filename);
     if (myfile.is_open()){
-        myfile << "2^n error\n";
+        myfile << "2^k error\n";
         for (int k = 1; k<=24; k++){
             myfile<< k <<"  "<<error_vec[k-1]<<"\n";
         }
