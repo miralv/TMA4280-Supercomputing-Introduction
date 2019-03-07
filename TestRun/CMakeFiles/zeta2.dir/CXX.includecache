@@ -13,6 +13,8 @@ mpi.h
 -
 cmath
 -
+stdlib.h
+-
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h
 stddef.h

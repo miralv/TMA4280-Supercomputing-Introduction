@@ -13,8 +13,8 @@ fstream
 -
 cmath
 -
-string
--
 omp.h
+-
+stdlib.h
 -
 

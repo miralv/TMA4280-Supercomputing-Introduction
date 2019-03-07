@@ -7,13 +7,17 @@
 #IncludeRegexTransform: 
 
 /home/miralv/Documents/TMA4280-Supercomputing-Introduction/mach4/main.cpp
+iostream
+-
+fstream
+-
 mpi.h
 -
 omp.h
 -
-iostream
--
 cmath
+-
+stdlib.h
 -
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h

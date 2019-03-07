@@ -9,8 +9,12 @@
 /home/miralv/Documents/TMA4280-Supercomputing-Introduction/zeta3/main.cpp
 iostream
 -
+fstream
+-
 omp.h
 -
 cmath
+-
+stdlib.h
 -
 

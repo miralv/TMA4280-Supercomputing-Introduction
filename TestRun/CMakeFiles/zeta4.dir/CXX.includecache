@@ -9,11 +9,15 @@
 /home/miralv/Documents/TMA4280-Supercomputing-Introduction/zeta4/main.cpp
 iostream
 -
+fstream
+-
 mpi.h
 -
 omp.h
 -
 cmath
+-
+stdlib.h
 -
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h
