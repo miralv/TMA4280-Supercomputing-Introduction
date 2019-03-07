@@ -2,6 +2,7 @@
 #include <mpi.h>
 #include <omp.h>
 #include <cmath>
+#include <stdlib.h>
 //Final program, combining MPI and OpenMP
 
 double riemannzeta(int i){

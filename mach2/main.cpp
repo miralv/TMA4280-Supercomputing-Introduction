@@ -1,6 +1,7 @@
 #include <mpi.h>
 #include <iostream>
 #include <cmath>
+#include <stdlib.h>
 
 double machin(int i, double x) {
     // Calculate v_i by use of the machin formula
@@ -58,6 +59,7 @@ int main(int argc, char** argv){
 
 
     if (rank == 0){
+	time_start = MPI_Wtime();
         for (int i = 0; i<n; i++){
             numbers_first[i] = machin(i+1,first);
             numbers_second[i] = machin(i+1,second);
@@ -82,7 +84,7 @@ int main(int argc, char** argv){
         double my_pi = 4 * (4 * sum_first_total - sum_second_total);
         double error = fabs(my_pi-PI);
         double duration = MPI_Wtime() - time_start;
-        printf("pi=%e\nerror=%e\nduration=%e\n", my_pi,error,duration);
+        printf("pi=%e error=%e duration=%e\n", my_pi,error,duration);
     }    
 
     delete[] numbers_first;

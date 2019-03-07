@@ -1,7 +1,9 @@
+#include <iostream>
+#include <fstream>
 #include <mpi.h>
 #include <omp.h>
-#include <iostream>
 #include <cmath>
+#include <stdlib.h>
 //Final program, combining MPI and OpenMP
 
 double machin(int i, double x) {

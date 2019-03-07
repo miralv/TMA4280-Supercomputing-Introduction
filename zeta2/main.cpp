@@ -1,6 +1,7 @@
 #include <iostream>
 #include <mpi.h>
 #include <cmath>
+#include <stdlib.h>
 
 double riemannzeta(int i){
     // Calculate v_i by use of the riemann zeta formula
@@ -49,6 +50,7 @@ int main(int argc, char** argv){
 
 
     if (rank == 0){
+        time_start = MPI_Wtime();
         for (int i = 0; i<n; i++){
             rz_vec[i] = riemannzeta(i+1);
         }
@@ -68,7 +70,7 @@ int main(int argc, char** argv){
     double my_pi = sqrt(6*sum_total);
     double error = fabs(my_pi-PI);
     double duration = MPI_Wtime() - time_start;
-    printf("pi=%e\nerror=%e\nduration=%e\n", my_pi,error,duration);
+    printf("pi=%e error=%e duration=%e\n", my_pi,error,duration);
 
     
     }    

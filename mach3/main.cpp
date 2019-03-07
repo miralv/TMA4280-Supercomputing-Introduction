@@ -1,8 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <cmath>
-#include <string>
 #include <omp.h>
+#include <stdlib.h>
 
 double machin(int i, double x) {
     // Calculate v_i by use of the machin formula
@@ -16,7 +16,7 @@ double machin(int i, double x) {
 // OpenMP implementation
 int main(int argc, char** argv){
     if(argc<3) {
-        std::cout<<"Requires arguemnt: n and nthreads"<<std::endl;
+        std::cout<<"Require arguemnts: n and nthreads"<<std::endl;
         return 1;
     }
 

@@ -1,6 +1,8 @@
 #include <iostream>
+#include <fstream>
 #include <omp.h>
 #include <cmath>
+#include <stdlib.h>
 
 double riemannzeta(int i){
     // Calculate v_i by use of the riemann zeta formula
@@ -10,9 +12,8 @@ double riemannzeta(int i){
 
 // OpenMP  implementation
 int main(int argc, char** argv){
-    if(argc<2) {
-        std::cout<<"Requires arguemnt: n"<<std::endl;
-        std::cout<<"Choose n and nproc s.t. n%nproc = 0\n n must be a power of 2\n "<<std::endl;
+    if(argc<3) {
+        std::cout<<"Require arguemnts: n and nthreads"<<std::endl;
         return 1;
     }
 
