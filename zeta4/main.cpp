@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <mpi.h>
 #include <omp.h>
 #include <cmath>
@@ -71,6 +72,7 @@ int main(int argc, char** argv){
     double my_pi = sqrt(6*sum_total);
     double error = fabs(my_pi-PI);
     double duration = MPI_Wtime() - time_start;
+    std::cout<<"Number of processes: "<<size<<"\nNumber of threads:"<<n_threads<<std::endl;
     printf("pi=%e\nerror=%e\nduration=%e\n", my_pi,error,duration);
     
     }    

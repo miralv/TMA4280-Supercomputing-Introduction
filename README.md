@@ -1,5 +1,9 @@
 # TMA4280-Supercomputing-Introduction
-How to run the different folders are specified below.
+Use the folder TestRun for building.
+Type in terminal
+cmake ..
+make
+Then the different programs can be run as specified below.
 
 prog: mach0, zeta0
 ./prog arg1 arg2, arg3
@@ -8,14 +12,19 @@ arg2: 1 if utest wanted (optional)
 arg3: 1 if vtest wanted (optional)
 
 
-mach1:
-mpirun -np <nprocesses> ./mach1
+prog: mach1, zeta1, mach2, zeta2
+mpirun -np <nprocesses> ./prog arg1
+arg1: n (required)
 
+prog: mach3, zeta3
+./prog arg1 arg2
+arg1: n (required)
+arg2: n threads (required)
 
-mach3: 
-hvis man kjører fra mappen mach3, så virker dette:
-g++ main.cpp .-lgomp -o test.exe 
+prog: mach4, zeta4
+mpirun -np <nprocesses> ./prog arg1 arg2
+arg1: n (required)
+arg2: n threads (required)
 
-eller: export OMP_NUM_THREADS=8; ./myprogram
 
 

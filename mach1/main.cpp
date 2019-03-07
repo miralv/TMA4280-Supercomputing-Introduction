@@ -1,6 +1,7 @@
 #include <mpi.h>
 #include <iostream>
 #include <cmath>
+#include <stdlib.h>
 
 double machin(int i, double x) {
     // Calculate v_i by use of the machin formula

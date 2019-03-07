@@ -18,8 +18,8 @@ double machin(int i, double x) {
 
 int main(int argc, char** argv){
     if(argc<2) {
-        std::cout<<"Requires arguemnts: n, nproc and nthreads."<<std::endl;
-        std::cout<<"Choose n and nproc and nthreads s.t. n%nprox = 0\n n must be a power of 2\n "<<std::endl;
+        std::cout<<"Require arguemnts: n and nthreads."<<std::endl;
+        std::cout<<"Choose n and nproc and nthreads s.t. n%nproc = 0\n n must be a power of 2\n "<<std::endl;
         return 1;
     }
     const double PI = 4*atan(1.0);
@@ -63,7 +63,6 @@ int main(int argc, char** argv){
             numbers_second[i] = machin(i+1,second);
         }
     }
-
     // Spread the elements over the processes
     MPI_Scatter(&numbers_first[0], n_each, MPI_DOUBLE, &numbers_first_sub[0], n_each, MPI_DOUBLE, 0,MPI_COMM_WORLD);
     MPI_Scatter(&numbers_second[0], n_each, MPI_DOUBLE, &numbers_second_sub[0], n_each, MPI_DOUBLE, 0,MPI_COMM_WORLD);
@@ -81,6 +80,7 @@ int main(int argc, char** argv){
         double pi = 4 * (4 * sum_first_total - sum_second_total);
         double error = fabs(pi-PI);
         double duration = MPI_Wtime() - time_start;
+        std::cout<<"Number of processes: "<<size<<"\nNumber of threads:"<<n_threads<<std::endl;
         printf("pi=%e\nerror=%e\nduration=%e\n", pi,error,duration);
     }    
 

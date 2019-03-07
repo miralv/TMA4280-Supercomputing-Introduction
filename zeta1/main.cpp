@@ -1,6 +1,7 @@
 #include <iostream>
 #include <mpi.h>
 #include <cmath>
+#include <stdlib.h>
 
 double riemannzeta(int i){
     // Calculate v_i by use of the riemann zeta formula
@@ -20,11 +21,9 @@ int main(int argc, char** argv){
     // Number of elements in the series
     int n = atoi(argv[1]);    
 
-    double* rz_vec = new double[n];
+    double* rz_vec;
+    rz_vec = new double[n];
     double sum_total = 0;
-    double sum_sub = 0;
-
-
 
     MPI_Init(&argc,&argv);
 
@@ -40,6 +39,7 @@ int main(int argc, char** argv){
     // Send all elements to all processes
     MPI_Bcast(&rz_vec[0],n,MPI_DOUBLE, 0,MPI_COMM_WORLD);
 
+    double sum_sub = 0;
 
     // Let all processes work on the received data
     for(int i = 0; i < n; i++){
@@ -49,7 +49,7 @@ int main(int argc, char** argv){
     MPI_Reduce(&sum_sub, &sum_total, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
     if(rank==0){
-    double my_pi = sqrt(6*sum_total)/size;
+    double my_pi = sqrt(6.0*sum_total/double(size));
         // Need to divide on size, since we have summed all elements in all processes
     std::cout<< "Process "<<rank<<" computed pi = "<< my_pi <<std::endl;
     }    

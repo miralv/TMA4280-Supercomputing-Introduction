@@ -1,7 +1,6 @@
 project(TMA4280_project1)
 cmake_minimum_required( VERSION 2.8)
 
-#want to have an executable file for each subfolder.
 find_package(MPI REQUIRED)
 find_package(OpenMP REQUIRED)
 
@@ -16,20 +15,7 @@ foreach (prog mach0 mach1 mach2 mach4 zeta0 zeta1 zeta2 zeta4)
     set_target_properties(${prog} PROPERTIES LINK_FLAGS ${MPI_CXX_LINK_FLAGS})
 endforeach()
 
-
-if (OpenMP_FOUND)
-    message("OpenMP found")
-else()
-    message("OpenMP could not be found.")
-endif()
-
-#foreach ( mach3 )
-#    add_executable(${prog} ${prog}/main.cpp)
-#    target_compile_options(${prog} PRIVATE ${OpenMP_CXX_FLAGS})
-#    target_link_libraries(${prog} ${OpenMP_CXX_LIBRARIES})  
-#endforeach()
-
-
+#The files using only openmp
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
